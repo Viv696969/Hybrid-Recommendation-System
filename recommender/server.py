@@ -29,7 +29,7 @@ async def add_product(request:Request):
 @app.post("/recommend_by_activity")
 async def recommend_by_activity(request:Request):
     data=await request.json()
-    ids=list(map(str,data['data']))
+    ids=data['activity']
     embeddings=collection.get(ids=ids,include=['embeddings'])['embeddings']
     # target_embedding=list(np.array(embeddings).mean(0))
     temp=collection.query(
