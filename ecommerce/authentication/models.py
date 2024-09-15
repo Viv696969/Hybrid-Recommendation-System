@@ -14,9 +14,8 @@ class Profile(models.Model):
     def add_item_id(self,item_id):
         if len(self.activity)==5: #activity is full
             self.activity.pop(0)
-            self.activity.append(item_id)
-        else:
-            self.activity.append(item_id)
+        self.activity.append(item_id)
+
     
 
 

@@ -1,3 +1,8 @@
 Collaborative filtering
 --> store user activity in array
 --> during recommending based on activity take cosine similarity of activity of all users , one with highest activity match take its products and also recommend it.
+
+
+tokens
+varad
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNTk1ODUxLCJpYXQiOjE3MjY0MTE4NTEsImp0aSI6IjY5YWYzZGU1OTQ4YzQwMjVhNjY3MWU0MDM1MjE0ZjIzIiwidXNlcl9pZCI6Mn0.2bYCElOfbnFFADxXzJjZeX1SPUNykRrhDHvH1JFBcQY
