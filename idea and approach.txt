@@ -1,0 +1,3 @@
+Collaborative filtering
+--> store user activity in array
+--> during recommending based on activity take cosine similarity of activity of all users , one with highest activity match take its products and also recommend it.
