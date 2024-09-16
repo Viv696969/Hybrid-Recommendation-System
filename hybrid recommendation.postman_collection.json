@@ -1,0 +1,496 @@
+{
+	"info": {
+		"_postman_id": "bfbd0c51-a674-4c66-a37e-4cba6a66b334",
+		"name": "hybrid recommendation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28037262",
+		"_collection_link": "https://speeding-shuttle-902482.postman.co/workspace/My-Workspace~02b26be5-2c64-4eac-8089-0ffe7e22a2dc/collection/28037262-bfbd0c51-a674-4c66-a37e-4cba6a66b334?action=share&source=collection_link&creator=28037262"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "uname",
+									"value": "varad",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/authentication/login_user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"authentication",
+								"login_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "uname",
+									"value": "elon",
+									"type": "text"
+								},
+								{
+									"key": "password1",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "elon mus",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "elon@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "1234567890",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/authentication/register_user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"authentication",
+								"register_user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "store",
+			"item": [
+				{
+					"name": "add_product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/add_product",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"add_product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"activity\":[\"3\",\"13\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/show_products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"show_products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product_to_vector",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/send_products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"send_products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNTk1ODUxLCJpYXQiOjE3MjY0MTE4NTEsImp0aSI6IjY5YWYzZGU1OTQ4YzQwMjVhNjY3MWU0MDM1MjE0ZjIzIiwidXNlcl9pZCI6Mn0.2bYCElOfbnFFADxXzJjZeX1SPUNykRrhDHvH1JFBcQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_id",
+									"value": "9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/show_product",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"show_product"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_to_cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNjU0ODQyLCJpYXQiOjE3MjY0NzA4NDIsImp0aSI6ImUzZTA1ZTIzMmU2MjQzNzdhMWQzNTNkYWFmNjU5ZTY2IiwidXNlcl9pZCI6N30.eja8f02_sz3qIl5s21x06aIg6N23aTOuAIG2GOKsrvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_id",
+									"value": "9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/add_to_cart",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"add_to_cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show_cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNTk1ODUxLCJpYXQiOjE3MjY0MTE4NTEsImp0aSI6IjY5YWYzZGU1OTQ4YzQwMjVhNjY3MWU0MDM1MjE0ZjIzIiwidXNlcl9pZCI6Mn0.2bYCElOfbnFFADxXzJjZeX1SPUNykRrhDHvH1JFBcQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/show_cart",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"show_cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNjU0ODQyLCJpYXQiOjE3MjY0NzA4NDIsImp0aSI6ImUzZTA1ZTIzMmU2MjQzNzdhMWQzNTNkYWFmNjU5ZTY2IiwidXNlcl9pZCI6N30.eja8f02_sz3qIl5s21x06aIg6N23aTOuAIG2GOKsrvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/place_order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"place_order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkout_recommendation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNTk1ODUxLCJpYXQiOjE3MjY0MTE4NTEsImp0aSI6IjY5YWYzZGU1OTQ4YzQwMjVhNjY3MWU0MDM1MjE0ZjIzIiwidXNlcl9pZCI6Mn0.2bYCElOfbnFFADxXzJjZeX1SPUNykRrhDHvH1JFBcQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/checkout_recommendation",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"checkout_recommendation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "recommender",
+			"item": [
+				{
+					"name": "by activity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":[\"1\",\"9\",\"10\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8888/recommend_by_activity",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8888",
+							"path": [
+								"recommend_by_activity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recommend products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8888/recommend_products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8888",
+							"path": [
+								"recommend_products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "collaborative_recommending",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":2,\r\n    \"activity\":[1,9,10]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8888/collaborative_recommending",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8888",
+							"path": [
+								"collaborative_recommending"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
