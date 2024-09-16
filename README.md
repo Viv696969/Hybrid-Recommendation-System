@@ -1,6 +1,7 @@
 # Hybrid-Recommendation-System
 
-access tokens from the idea and approach .txt for login and signup also for testing other apis 
+- access tokens from the idea and approach .txt for login and signup also for testing other apis 
+- while sending jwt token send as Bearer __token__string
 
 ### 2. **`/store/show_products`**
 
