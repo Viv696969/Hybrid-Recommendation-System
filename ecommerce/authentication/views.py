@@ -54,6 +54,7 @@ def register_user(request):
             profile.user=new_user
             profile.name=name
             profile.mobile=mobile
+            profile.save()
             return JsonResponse(
                 {
                     'mssg':"Profile created Successfully...",

@@ -153,3 +153,20 @@ def place_order(request):
         'mssg':'Order Placed successffully!!',
         'order_id':order.id
     },status=201)
+
+
+@api_view(["POST"])
+@csrf_exempt
+@permission_classes([IsAuthenticated])
+def checkout_recommendation(request):
+    user=request.user
+    activity=Profile.objects.get(user=user).activity
+    print(activity)
+    resp=requests.post("http://127.0.0.1:8888/collaborative_recommending",json={'activity':activity,"user_id":user.id})
+    product_ids=list(map(int,resp.json()['data']))
+    data=ProductSerializer(
+        sorted(Product.objects.filter(id__in=product_ids),key=lambda x : product_ids.index(x.id)),
+        many=True
+        
+        ).data
+    return JsonResponse(data={'data':data},status=200,safe=False)
