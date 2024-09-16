@@ -208,5 +208,7 @@
   - `201 Created`: User registration successful.
   - `400 Bad Request`: Invalid input or username already taken.
 
-### URL Configuration
+### ERD Diagram
+
+<img src="https://github.com/Viv696969/Hybrid-Recommendation-System/blob/main/Untitled.png" >
 
