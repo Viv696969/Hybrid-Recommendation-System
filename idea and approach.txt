@@ -5,6 +5,8 @@ Collaborative filtering
 
 tokens
 
+all have passwords = 1234
+
 varad
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNTk1ODUxLCJpYXQiOjE3MjY0MTE4NTEsImp0aSI6IjY5YWYzZGU1OTQ4YzQwMjVhNjY3MWU0MDM1MjE0ZjIzIiwidXNlcl9pZCI6Mn0.2bYCElOfbnFFADxXzJjZeX1SPUNykRrhDHvH1JFBcQY
 

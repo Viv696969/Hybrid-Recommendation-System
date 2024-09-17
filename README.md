@@ -1,7 +1,8 @@
 # Hybrid-Recommendation-System
 
-- access tokens from the idea and approach .txt for login and signup also for testing other apis 
+- access tokens from the idea_and_approach.txt for login and signup also for testing other apis 
 - while sending jwt token send as Bearer __token__string
+- all have passwords=1234
 
 ### 2. **`/store/show_products`**
 
@@ -209,6 +210,7 @@
   - `400 Bad Request`: Invalid input or username already taken.
 
 ### ERD Diagram
-
-<img src="https://github.com/Viv696969/Hybrid-Recommendation-System/blob/main/Untitled.png" >
+<div style="text-align: center;">
+         <img src="https://github.com/Viv696969/Hybrid-Recommendation-System/blob/main/ERD.png" >
+      </div>
 
