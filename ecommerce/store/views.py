@@ -43,6 +43,7 @@ def show_products(request):
     if user.is_authenticated:
         if 'activity' in request.data:
             data=request.data
+            print(data)
             resp=requests.post("http://127.0.0.1:8888/recommend_by_activity",json=data)
             ids=list(map(int ,resp.json()['data']))
             products=Product.objects.filter(id__in=ids)
@@ -75,7 +76,7 @@ def send_products(request):
 @csrf_exempt
 @permission_classes([IsAuthenticated])
 def show_product(request):
-    product_id=request.POST['product_id']
+    product_id=request.data.get("product_id")
     product=Product.objects.get(id=int(product_id))
     resp=requests.post("http://127.0.0.1:8888/recommend_products",json={'product_id':product_id})
     ids=list(map(int,resp.json()['data']))
@@ -94,7 +95,10 @@ def show_product(request):
 @permission_classes([IsAuthenticated])
 def add_to_cart(request):
     try:
-        product_id=request.POST['product_id']
+        data=request.data
+        print(data)
+        
+        product_id=int(data.get("product_id"))
         product=Product.objects.get(id=product_id)
         user=request.user
         cart=Cart.objects.create(product=product,user=user,total_price=product.price)
